@@ -53,6 +53,7 @@ AirlinePro/
 State Management: React Context API (for Authentication state)
 
 Styling: CSS (Glassmorphism design)
+
 ⚙️ Installation & Run InstructionsPrerequisitesJava JDK 17 or 21Node.js & npmMySQL Server1. Database SetupOpen MySQL Workbench.Create a new database:SQLCREATE DATABASE airline_reservation_system;
 Update your database credentials in Backend/src/main/resources/application.properties:Propertiesspring.datasource.username=YOUR_MYSQL_USERNAME
 spring.datasource.password=YOUR_MYSQL_PASSWORD
