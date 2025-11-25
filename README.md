@@ -53,3 +53,13 @@ AirlinePro/
 State Management: React Context API (for Authentication state)
 
 Styling: CSS (Glassmorphism design)
+⚙️ Installation & Run InstructionsPrerequisitesJava JDK 17 or 21Node.js & npmMySQL Server1. Database SetupOpen MySQL Workbench.Create a new database:SQLCREATE DATABASE airline_reservation_system;
+Update your database credentials in Backend/src/main/resources/application.properties:Propertiesspring.datasource.username=YOUR_MYSQL_USERNAME
+spring.datasource.password=YOUR_MYSQL_PASSWORD
+2. Running the Backend (Server)Open a terminal and navigate to the backend folder:Bashcd Backend
+Build and run the application:Bash./mvnw clean package
+java -jar target/airline-reservation-system-0.0.1-SNAPSHOT.jar
+The server will start on http://localhost:8081.3. Running the Frontend (UI)Open a new terminal and navigate to the frontend folder:Bashcd Frontend/airline-ui
+Install dependencies:Bash npm install
+Start the development server:Bashnpm run dev
+Open your browser and go to http://localhost:5173.🔑 Usage & CredentialsDefault Login CredentialsThe application includes a DatabaseSeeder that automatically creates default roles and users when you run it for the first time.Admin User:Username: adminPassword: admin(Has access to Add/Edit/Delete Flight & Customer Management)Regular User:Register a new account via the "Register" link on the homepage to test the Customer flow.📡 API EndpointsMethodEndpointDescriptionAccessPOST/api/auth/registerRegister a new userPublicPOST/api/auth/loginLogin & receive JWTPublicGET/flights/allGet all flightsPublicGET/flights/searchSearch flightsPublicPOST/flights/addAdd a new flightAdminPUT/flights/update/{id}Update flight detailsAdminDELETE/flights/delete/{id}Delete a flightAdminPOST/bookings/createBook a ticketUserDELETE/bookings/cancel/{id}Cancel a bookingUser📸 Screenshots(You can upload your screenshots to the public folder or your GitHub README directly to display them here)Home Page (Flight Search)Login PageMy Bookings Dashboard🛡️ LicenseThis project is developed for educational purposes.
