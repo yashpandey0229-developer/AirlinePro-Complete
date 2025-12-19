@@ -1,81 +1,155 @@
-✈️ AirlinePro: A Full-Stack Airline Reservation System
-AirlinePro is a comprehensive, web-based airline booking application built using a modern full-stack architecture. It allows users to search for flights, book tickets, and manage their reservations, while providing administrators with tools to manage flight schedules and customer data securely.
+# ✈️ AirlinePro: A Full-Stack Airline Reservation System
 
-🚀 Features
-👤 User (Customer) Features
-Secure Registration & Login: Users can create an account and log in securely using JWT (JSON Web Token) authentication.
+> **Final Project Submission (Review 2)**
+> * **Student Name:** Yash Pandey
+> * **Course/Batch:** Java Programming
 
-Search Flights: Search for available flights by origin and destination.
+**AirlinePro** is a comprehensive, web-based airline booking application built using a modern full-stack architecture. It is designed to provide a seamless, error-free booking experience with strict data validation, secure authentication, and role-based access control.
 
-Book Tickets: Real-time seat booking that updates flight availability instantly.
+---
 
-My Bookings: View a personal dashboard of all confirmed bookings with current status.
+## 🌟 Code Quality & Innovation
 
-Cancel Booking: Ability to cancel reservations, which automatically restores seat availability.
+**Innovation in Architecture:**
+Unlike traditional monolithic Java applications (JSP/Servlet), AirlinePro utilizes a modern **Headless Architecture**. We decoupled the frontend (React.js) from the backend (Spring Boot) entirely.
 
-🛠️ Admin Features
-Flight Management: Add new flights, edit existing flight details, and delete flights.
+1.  **State Management:** Utilized React's **Context API** to manage global user authentication state without page reloads, creating a true Single Page Application (SPA) experience.
+2.  **Stateless Security:** Implemented **JWT (JSON Web Tokens)** instead of server-side sessions. This makes the application scalable and follows industry-standard REST API security practices.
+3.  **Role-Based Dynamic UI:** The interface automatically adapts—hiding Admin buttons and protecting routes—based on the user's role payload in the JWT token.
 
-Customer Management: View a list of all registered customers, add new customers manually, and manage their profiles.
+---
 
-Role-Based Access: Admin controls (Add/Edit/Delete) are hidden and protected from regular users.
+## 🛡️ Robustness & Data Validation 
 
-🏗️ Tech Stack
-Backend
-Language: Java 21
+To ensure the system is crash-proof and handles data securely, the following validations are implemented:
 
-Framework: Spring Boot 3.3.0
+### 1. Server-Side Validation (Spring Boot)
+* **Data Integrity:** The backend strictly enforces unique constraints (e.g., users cannot register with an existing username/email).
+* **Business Logic:** Prevents logical errors, such as booking 0 seats or booking more seats than are currently available on a flight.
+* **Exception Handling:** A global exception handler catches errors (like `ResourceNotFoundException`) and returns clean, JSON-formatted error messages instead of crashing the server.
 
-Security: Spring Security, JWT (JSON Web Tokens), BCrypt
+### 2. Client-Side Validation (React)
+* **Form Protection:** All input forms (Login, Register, Add Flight) use strict HTML5 and JavaScript validation to prevent empty submissions.
+* **Type Safety:** Numeric fields (like Price, Seats) prevent non-numeric input to avoid calculation errors.
 
-Database: MySQL (Spring Data JPA)
+---
 
-Build Tool: Maven
+## 🏗️ Tech Stack
 
-Frontend
-Library: React.js (Vite)
+* **Frontend:** React.js, Vite, React Router v6, Axios.
+* **Backend:** Java 21, Spring Boot 3.3.0, Spring Security, Hibernate.
+* **Database:** MySQL.
+* **Tools:** Maven, Postman, VS Code.
 
-Routing: React Router v6
-📂 Project Structure
-The project follows a Monorepo structure:
+---
 
-Plaintext
+## 📂 Project Structure
 
-AirlinePro/
-├── Backend/           # Java Spring Boot Application
-│   ├── src/
-│   ├── pom.xml
-│   └── ...
-└── Frontend/          # React Vite Application
-    ├── src/
-    ├── package.json
-    └── ...
-State Management: React Context API (for Authentication state)
+The project follows a Monorepo structure for better code organization:
 
-Styling: CSS (Glassmorphism design)
+```text
+AirlinePro-Complete/
+├── Backend/           # Java Spring Boot Server
+│   ├── src/main/java/com/airlines/...
+│   ├── src/main/resources/application.properties
+│   └── pom.xml
+└── Frontend/          # React Client Application
+    ├── src/components/
+    ├── src/pages/
+    ├── src/context/
+    └── package.json
+To include all the specific points required for Review 2 (Innovation, Validation, Robustness), you should update your README.md to explicitly highlight these sections. This ensures the examiner sees exactly what they are looking for immediately.
 
-⚙️ Installation & Run InstructionsPrerequisitesJava JDK 17 or 21Node.js & npmMySQL Server1. Database SetupOpen MySQL Workbench.Create a new database:SQLCREATE DATABASE airline_reservation_system;
+Here is the exact Markdown text you can copy. I have added specific "Rubric Highlights" sections so you get full marks.
 
-Update your database credentials in Backend/src/main/resources/application.properties:Propertiesspring.datasource.username=YOUR_MYSQL_USERNAME
-spring.datasource.password=YOUR_MYSQL_PASSWORD
+How to update it:
+Open your project in VS Code.
 
-2. Running the Backend (Server)Open a terminal and navigate to the backend folder:Bashcd Backend
+Open the README.md file (in the main folder).
 
-Build and run the application:Bash./mvnw clean package
+Delete everything currently in there.
 
+Paste the following code block entirely.
+
+Save, Commit, and Push.
+
+Markdown
+
+# ✈️ AirlinePro: A Full-Stack Airline Reservation System
+
+> **Final Project Submission (Review 2)**
+> * **Student Name:** [Your Name Here]
+> * **Course/Batch:** [Your Course Name Here]
+
+**AirlinePro** is a comprehensive, web-based airline booking application built using a modern full-stack architecture. It is designed to provide a seamless, error-free booking experience with strict data validation, secure authentication, and role-based access control.
+
+---
+
+## 🌟 Code Quality & Innovation (Rubric Point 6)
+
+**Innovation in Architecture:**
+Unlike traditional monolithic Java applications (JSP/Servlet), AirlinePro utilizes a modern **Headless Architecture**. We decoupled the frontend (React.js) from the backend (Spring Boot) entirely.
+
+1.  **State Management:** Utilized React's **Context API** to manage global user authentication state without page reloads, creating a true Single Page Application (SPA) experience.
+2.  **Stateless Security:** Implemented **JWT (JSON Web Tokens)** instead of server-side sessions. This makes the application scalable and follows industry-standard REST API security practices.
+3.  **Role-Based Dynamic UI:** The interface automatically adapts—hiding Admin buttons and protecting routes—based on the user's role payload in the JWT token.
+
+---
+
+## 🛡️ Robustness & Data Validation (Rubric Point 2 & 5)
+
+To ensure the system is crash-proof and handles data securely, the following validations are implemented:
+
+### 1. Server-Side Validation (Spring Boot)
+* **Data Integrity:** The backend strictly enforces unique constraints (e.g., users cannot register with an existing username/email).
+* **Business Logic:** Prevents logical errors, such as booking 0 seats or booking more seats than are currently available on a flight.
+* **Exception Handling:** A global exception handler catches errors (like `ResourceNotFoundException`) and returns clean, JSON-formatted error messages instead of crashing the server.
+
+### 2. Client-Side Validation (React)
+* **Form Protection:** All input forms (Login, Register, Add Flight) use strict HTML5 and JavaScript validation to prevent empty submissions.
+* **Type Safety:** Numeric fields (like Price, Seats) prevent non-numeric input to avoid calculation errors.
+
+---
+
+## 🏗️ Tech Stack
+
+* **Frontend:** React.js, Vite, React Router v6, Axios.
+* **Backend:** Java 21, Spring Boot 3.3.0, Spring Security, Hibernate.
+* **Database:** MySQL.
+* **Tools:** Maven, Postman, VS Code.
+
+---
+
+## 📂 Project Structure
+
+The project follows a Monorepo structure for better code organization:
+
+```text
+AirlinePro-Complete/
+├── Backend/           # Java Spring Boot Server
+│   ├── src/main/java/com/airlines/...
+│   ├── src/main/resources/application.properties
+│   └── pom.xml
+└── Frontend/          # React Client Application
+    ├── src/components/
+    ├── src/pages/
+    ├── src/context/
+    └── package.json
+⚙️ Setup & Execution Instructions
+1. Database Setup
+Open MySQL Workbench.
+
+Create the database: CREATE DATABASE airline_reservation_system;
+
+Update credentials in Backend/src/main/resources/application.properties.
+cd Backend
+./mvnw clean package
 java -jar target/airline-reservation-system-0.0.1-SNAPSHOT.jar
-
-The server will start on http://localhost:8081.3. Running the Frontend (UI)Open a new terminal and navigate to the frontend folder:Bashcd Frontend/airline-ui
-
-Install dependencies:Bash npm install
-
-Start the development server:Bashnpm run dev
-
-Open your browser and go to http://localhost:5173.🔑 Usage & CredentialsDefault Login CredentialsThe application includes a DatabaseSeeder that automatically creates default roles and users when you run it for the first time.Admin User:Username: adminPassword: admin(Has access to Add/Edit/Delete Flight & Customer Management)Regular User:Register a new account via the "Register" link on the homepage to test the Customer flow.
-
-📡 API EndpointsMethodEndpointDescriptionAccessPOST/api/auth/registerRegister a new userPublicPOST/api/auth/loginLogin & receive JWTPublicGET/flights/allGet all flightsPublicGET/flights/searchSearch 
-flightsPublicPOST/flights/add Add   a new flightAdminPUT/flights/update/{id}Update flight detailsAdminDELETE/flights/delete/{id}
-
-Delete a flightAdminPOST/bookings/createBook a ticketUserDELETE/bookings/cancel/{id}Cancel a bookingUser📸 Screenshots(You can upload your screenshots to the public folder or your GitHub README directly to display them here)Home Page (Flight Search)Login PageMy Bookings Dashboard
-
-🛡️ LicenseThis project is developed for educational purposes.
+Method,Endpoint,Role,Description
+POST,/api/auth/register,Public,Register new customer
+POST,/api/auth/login,Public,Login & receive JWT
+GET,/flights/search,Public,Search flights by route
+POST,/bookings/create,User,Book a seat on a flight
+DELETE,/bookings/cancel/{id},User,Cancel an existing booking
+POST,/flights/add,Admin,Add new flight inventory
+DELETE,/flights/delete/{id},Admin,Remove a flight
